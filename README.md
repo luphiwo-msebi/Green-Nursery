@@ -1,9 +1,9 @@
 # Green-Nursery
-==========================================================================================================================
+=================================================================================================
 # Luphiwo Msebi
 # ST10523156
-==========================================================================================================================
-#  Organisation Overview
+=================================================================================================
+# 1. Organisation Overview
 
 Green Earth Nursery
 
@@ -24,8 +24,8 @@ Target Audience:
  . Landscapers
  . People aged 20–65 interested in gardening
 
-========================================================================================================================================================================
-# Goals and Objectives
+===========================================================================================================================================
+# 2. Goals and Objectives
 The website aims to:
 . Increase online visibility.
 . Attract new customers.
@@ -41,8 +41,8 @@ Key Performance Indicators:
 . Reduce customer response time to less than 24 hours.
 . Achieve customer satisfaction rate of 90%.
 
-==================================================================================================================================================================
-# Current Website Analysis
+========================================================================================================================================
+# 3. Current Website Analysis
 For now, Green Earth Nursery does not have a website. Lacking
 
 Strengths:
@@ -64,9 +64,9 @@ Develop a professional website that includes:
 . Location map
 . Gardening blog
 . Online ordering system
-===========================================================================================================================================================
 
-# Proposed Website Features and Functionality
+======================================================================================================================================
+# 4. Proposed Website Features and Functionality
 
 The website will include:
 . Home Page
@@ -81,19 +81,21 @@ The website will include:
 . Contact Form
 . Newsletter Subscription
 . Mobile-friendly design
-. Search function#
-==============================================================================================================================================================
+. Search function
+=======================================================================================================================================
 
 # Timeline and Milestones
 
 | Week   | Task                  |
 | ------ | --------------------- |
 | Week 1 | Research organisation |
-| Week 2 |Write proposal         |
+| Week 2 | Write proposal        |
 | Week 3 | Design wireframes     |
 | Week 4 | Develop HTML pages    |
 | Week 5 | Add CSS styling       |
 | Week 6 | Add JavaScript        |
 | Week 7 | Testing               |
 | Week 8 | Final improvements    |
-| Week 9 | Submit project        |
+| Week 9 | Submit project        
+
+==========================================================================================================================================
