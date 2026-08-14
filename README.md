@@ -88,11 +88,11 @@ The website will include:
 
 | Week   | Task                  |
 | ------ | --------------------- |
-| Week 1  Research organisation |
-| Week 2 Write proposal        |
-| Week 3  Design wireframes     |
-| Week 4  Develop HTML pages    |
-| Week 5  Add CSS styling       |
+| Week 1 | Research organisation |
+| Week 2 | Write proposal        |
+| Week 3 | Design wireframes     |
+| Week 4 | Develop HTML pages    |
+| Week 5 | Add CSS styling       |
 | Week 6 | Add JavaScript        |
 | Week 7 | Testing               |
 | Week 8 | Final improvements    |
