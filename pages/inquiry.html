@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GREEN NURSERY | INQUIRY</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">HOME</a>
+            <a href="../about.html">ABOUT US</a>
+            <a href="../contact.html">CONTACT US</a>
+            <a href="./inquiry.html">INQUIRY</a>
+            <a href="../products.html">PRODUCTS</a>
+            <a href="../services.html">SERVICES</a> 
+        </nav>
+    </header>
+     <main>
+        <section>
+           <h1 style="text-align: center;">Inquiry Form</h1>
+            <!--Create a form-->
+            <form action="#" method="POST">
+              <label for="name" name="name">Your Name:</label><br/>
+              <input type="text" id="name" placeholder=" Tell us who you are " required>
+              <br/><br/>
+              <label for="email" name="email">Email Address:</label><br/>
+              <input type="email" name="email" placeholder="Where we can reply to you " required>
+              <br/><br/>
+              <label for="proj_type" name="proj_type">Project Type:</label><br/>
+              <select>
+                <option value="">--Select--</option>
+                <option value="">Garderning tools</option>
+                <option value="">Plant Care Sevires</option>
+                <option value="">Pottery care</option>
+              </select>
+              <br/><br/>
+              <label for="budget" name="budget">Estimated Budget:</label><br/>
+              <input type="number" name="budget" min="0" placeholder="Helps us suggest the right solution." required>
+              <br/><br/>
+              <label for="message" name="message">Message</label><br/>
+              <textarea name="message" rows="10" cols="40" placeholder="Helps us suggest the right solution." required>
+
+              </textarea>
+              <br/><br/>
+              <button type="submit">Submit</button>
+             </form> 
+        </section>
+    </main>
+</body>
+</html>
