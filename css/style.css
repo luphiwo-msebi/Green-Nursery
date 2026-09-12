@@ -1,0 +1,74 @@
+@import url(https://fonts.google.com/specimen/Dancing+Script);
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: larger;
+    text-align: center;
+    color: rgb(192, 147, 0);
+    margin: 20px 0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Dancing Script', cursive;
+    background-attachment: white;
+    color: #000;
+    line-height: 1.6;
+}
+
+/* Navigation Bar Styles */
+.sit-header {
+    background: linear-gradient(135deg, #111827, #1f2937);
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    top: 0;
+    border: burlywood;
+    color: aliceblue;
+    z-index: 1000;
+}
+
+.sit- logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff6a;
+    text-decoration: none;
+}
+
+.main-navigation {
+    gap: 20px;
+    display: flex;
+}
+
+.nav-link {
+    color: #d6b912;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-link {
+    background-color: blanchedalmond;
+    color: honeydew;
+}
+
+/* Main Content Styles */
+.main-content {
+    width: auto;
+    padding: 20px 8%;
+    min-height: auto;
+}
+
+section {
+    padding: 60px 8%;
+}
