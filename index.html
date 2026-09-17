@@ -5,11 +5,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>GREEN NURSERY | HOME</title>
+    <style>
+        /* 1. Global Reset & Variables */
+        :root {
+            --primary-color: #0f4c5c; /* Deep lush emerald teal */
+            --secondary-color: #06d6a0; /* Vibrant mint neon accent */
+            --dark-color: #1d2d44; /* Crisp deep slate for high-readability text */
+            --light-bg: linear-gradient(135deg, #f4f9f4 0%, #e8f5e9 100%); /* Lively soft gradient */
+            --white: #ffffff;
+            --font-stack: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background: var(--light-bg);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* 2. Header & Navigation */
+        .sit-header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px); /* Modern frosted-glass effect */
+            box-shadow: 0 4px 20px rgba(15, 76, 92, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+        }
+
+        .sit-logo {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+
+        /* Animated underline on link hover */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* 3. Layout Structure & Animations */
+        main {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        section {
+            background-color: var(--white);
+            border-radius: 20px; /* Softer, friendlier corners */
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(15, 76, 92, 0.04);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Playful pop-out effect on hover */
+        section:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(15, 76, 92, 0.08);
+        }
+
+        /* Desktop split layout */
+        @media (min-width: 768px) {
+            section {
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+            }
+            #hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                background: linear-gradient(180deg, #ffffff 0%, #f9fdfa 100%);
+            }
+            /* Alternating grid rows for visual interest */
+            section:nth-of-type(even) .section-content {
+                order: 2;
+            }
+        }
+
+        /* 4. Typography & Buttons */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            height: 4px;
+            width: 40px;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #52606d;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-text-large {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #3e4c59;
+            line-height: 1.7;
+        }
+
+        /* Call To Action Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 0.8rem 1.6rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 600;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(15, 76, 92, 0.15);
+        }
+
+        .btn:hover {
+            background-color: #17657a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(15, 76, 92, 0.25);
+        }
+
+        /* 5. Clean, Lively Images */
+        .section-img {
+            width: 100%;
+            height: auto;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 12px 24px rgba(15, 76, 92, 0.08);
+            transition: transform 0.5s ease;
+        }
+
+        section:hover .section-img {
+            transform: scale(1.02); /* Slight lively zoom on hover */
+        }
+
+        #hero .section-img {
+            max-height: 420px;
+            max-width: 80%;
+            margin: 2rem auto 0 auto;
+            display: block;
+        }
+
+        /* 6. Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
+
     <header class="sit-header">
-        <h1 class="sit-logo">GREEN NURSERY</h1>
-        
+        <h1 class="sit-logo">🌿 GREEN NURSERY</h1>
         <nav>
             <a class="nav-link" href="./index.html">HOME</a>
             <a class="nav-link" href="./pages/about.html">ABOUT US</a>
@@ -19,36 +239,52 @@
             <a class="nav-link" href="./pages/services.html">SERVICES</a>
         </nav>
     </header>
+
     <main>
-        <section>
-            <h1 style="color: rgb(192, 147, 0); text-align: center; ">GREEN NURSERY</h1>
-            <P>Green Nursery is a plant base care organization, looking after plants and provide essenticals for plantation.  </P>
-            <img src="./assets/1000_F_1984458249_cx2BqRm1KyxSh16vZyl1JjljgDPXczpH.jpg" width="75%" height="75%" alt="main image">
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Bring Your Space to Life</h1>
+                <p class="section-text-large">We are a dedicated plant-care organization offering hand-picked greenery, specialized botanical treatments, and everything you need to build your perfect garden oasis.</p>
+                <a href="./pages/products.html" class="btn">Explore Plants ✨</a>
+            </div>
+            <img class="section-img" src="./assets/1000_F_1984458249_cx2BqRm1KyxSh16vZyl1JjljgDPXczpH.jpg" alt="Green Nursery main display">
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="section-content">
+                <h2>Our Roots</h2>
+                <p class="section-text-large">Green Earth Nursery began as a small passion project. Today, we help our local community cultivate vibrant, thriving, and healthy home environments.</p>
+                <a href="./pages/about.html" class="btn">Learn Our Story</a>
+            </div>
+            <img class="section-img" src="./assets/thumbnail-subdept.jpg" alt="About our nursery">
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="section-content">
+                <h2>Expert Care Services</h2>
+                <p class="section-text-large">From personalized plant consultations to routine maintenance setup, our plant specialists are always here to assist you at every stage of growth.</p>
+                <a href="./pages/services.html" class="btn">View All Services</a>
+            </div>
+            <img class="section-img" src="./assets/240_F_293663725_HMEfPPsrJh1Z4ICBtrhYFZbE6c4kPTZX.jpg" alt="Our plant services">
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="section-content">
+                <h2>Get In Touch</h2>
+                <p class="section-text-large">Have a sick plant or need custom design advice? Drop us a line, and our green thumbs will get right back to you with custom solutions.</p>
+                <a href="./pages/contact.html" class="btn">Message Us</a>
+            </div>
+            <img class="section-img" src="./assets/1000_F_463635935_IweuYhCqZRtHp3SLguQL8svOVroVXvvZ.jpg" alt="Contact Green Nursery">
         </section>
     </main>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p style="font-size: larger; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-          Green Earth Nursery is a small plant nursery. 
-        </p>
-        <img src="./assets/thumbnail-subdept.jpg" width="75%" height="75%" alt="main image">
-    </section>
+    <footer>
+        <p>&copy; 2026 Green Nursery. Cultivating joy, one leaf at a time.</p>
+    </footer>
 
-    <section id="services">
-         <h2>Service</h2>
-        <p style="font-size: larger; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-          Try our best to asset you.   
-        </p>
-        <img src="./assets/240_F_293663725_HMEfPPsrJh1Z4ICBtrhYFZbE6c4kPTZX.jpg" width="75%" height="75%" alt="main image">
-    </section>
-
-    <section>
-         <h2>Contact Us</h2>
-         <p style="font-size: larger; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-           Please contact us if you have problems
-         </p>
-         <img src="./assets/1000_F_463635935_IweuYhCqZRtHp3SLguQL8svOVroVXvvZ.jpg" width="75%" height="75%" alt="main image">
-    </section>
 </body>
 </html>

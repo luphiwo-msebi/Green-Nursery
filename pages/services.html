@@ -5,11 +5,196 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <title>GREEN NURSERY | SERVICES</title>
+    <style>
+        /* 1. Global Reset & Shared Brand Variables */
+        :root {
+            --primary-color: #0f4c5c; /* Deep lush emerald teal */
+            --secondary-color: #06d6a0; /* Vibrant mint neon accent */
+            --dark-color: #1d2d44; /* Crisp deep slate for high-readability text */
+            --light-bg: linear-gradient(135deg, #f4f9f4 0%, #e8f5e9 100%);
+            --white: #ffffff;
+            --font-stack: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background: var(--light-bg);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* 2. Header & Navigation */
+        .sit-header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(15, 76, 92, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+        }
+
+        .sit-logo {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* 3. Layout Structure & Containers */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 3.5rem 3rem;
+            box-shadow: 0 10px 30px rgba(15, 76, 92, 0.04);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(15, 76, 92, 0.08);
+        }
+
+        /* 4. Typography Elements */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -8px;
+            height: 4px;
+            width: 60px;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+        }
+
+        p.description {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #4a5568;
+            max-width: 650px;
+            line-height: 1.8;
+            margin: 1rem 0;
+        }
+
+        /* 5. Contact List / Badge Styling */
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease;
+        }
+
+        .contact-item:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+            transform: scale(1.03);
+        }
+
+        /* 6. Clean, Lively Images */
+        .section-img {
+            width: 100%;
+            max-width: 750px;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 12px 24px rgba(15, 76, 92, 0.08);
+        }
+    </style>
 </head>
 <body>
-    <header>
+
+    <header class="sit-header">
+        <a href="../index.html" class="sit-logo">🌿 GREEN NURSERY</a>
         <nav>
-            <a class="nav-link"href="../index.html">HOME</a>
+            <a class="nav-link" href="../index.html">HOME</a>
             <a class="nav-link" href="../pages/about.html">ABOUT US</a>
             <a class="nav-link" href="../pages/contact.html">CONTACT US</a>
             <a class="nav-link" href="../pages/inquiry.html">INQUIRY</a>
@@ -18,19 +203,32 @@
         </nav>
     </header>
 
-    <section>
-    <img src="../assets/1000_F_2084336278_OFTDvgSeDFpmOfHoafhy8VuSzmNPaWkU.jpg" width="75%" height="75%" alt="main image"><br/>
-    <hr/>
-    <h1 style="text-align: center;">Personal Service</h1>
-    </section>
-    <p style="font-size: larger; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-        We'd like to serve you all to our best capables. Moo is head of customer services, he can help if not other employess shall help in their stad.
-    </p>
-    <ul>
-         <li>Email: moo_moni@gmail.com</li>
-         <li>Phone: 0754634771 </li>
-    </ul>
-    <br/><hr/>
+    <main>
+        <div class="service-card">
+            <!-- Main Featured Image -->
+            <img class="section-img" src="../assets/1000_F_2084336278_OFTDvgSeDFpmOfHoafhy8VuSzmNPaWkU.jpg" alt="Personalised customer support service">
+            
+            <!-- Service Content Header -->
+            <h1>Personal Service</h1>
+            
+            <!-- Description Content -->
+            <p class="description">
+                We are fully dedicated to serving you to the absolute best of our abilities. Our Customer Care team is led directly by Moo, who is always available alongside our dedicated staff members to assist you with any request or tailored advice. And the rest of our lovely team.
+            </p>
+            
+            <!-- Dynamic Contact Badges -->
+            <ul class="contact-list">
+                 <li class="contact-item">✉️ moo_moni@gmail.com</li>
+                 <li class="contact-item">📞 0754634771</li>
+                 <li class="contact-item">✉️ koya_mani67@gmail.com</li>
+                 <li class="contact-item">📞 0954667823</li>
+                 <li class="contact-item">✉️ mia_mooka@gmail.com</li>
+                 <li class="contact-item">📞 0823990022</li>
+                 <li class="contact-item">✉️ Davido_mayo@gmail.com</li>
+                 <li class="contact-item">📞 0734445866</li>
+            </ul>
+        </div>
+    </main>
 
 </body>
 </html>
