@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>GREEN NURSERY | HOME</title>
     <style>
-        /* 1. Global Reset & Variables */
+        /* ==========================================
+           GLOBAL BRAND STYLES & VARIABLE TOKENS
+           ========================================== */
         :root {
-            --primary-color: #0f4c5c; /* Deep lush emerald teal */
-            --secondary-color: #06d6a0; /* Vibrant mint neon accent */
-            --dark-color: #1d2d44; /* Crisp deep slate for high-readability text */
-            --light-bg: linear-gradient(135deg, #f4f9f4 0%, #e8f5e9 100%); /* Lively soft gradient */
+            --primary-color: #0f4c5c;      /* Deep lush emerald teal */
+            --secondary-color: #06d6a0;    /* Vibrant mint neon accent */
+            --dark-color: #1d2d44;         /* Crisp deep slate for text readability */
+            --light-bg: linear-gradient(135deg, #f4f9f4 0%, #e8f5e9 100%); 
             --white: #ffffff;
             --font-stack: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
@@ -29,10 +31,12 @@
             line-height: 1.6;
         }
 
-        /* 2. Header & Navigation */
+        /* ==========================================
+           HEADER & NAVIGATION STYLES
+           ========================================== */
         .sit-header {
             background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px); /* Modern frosted-glass effect */
+            backdrop-filter: blur(10px);
             box-shadow: 0 4px 20px rgba(15, 76, 92, 0.05);
             position: sticky;
             top: 0;
@@ -48,6 +52,7 @@
             font-size: 1.6rem;
             font-weight: 800;
             letter-spacing: -0.5px;
+            text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -72,7 +77,6 @@
             transform: translateY(-1px);
         }
 
-        /* Animated underline on link hover */
         .nav-link::after {
             content: '';
             position: absolute;
@@ -88,7 +92,9 @@
             width: 100%;
         }
 
-        /* 3. Layout Structure & Animations */
+        /* ==========================================
+           DYNAMIC RESPONSIVE SECTIONS
+           ========================================== */
         main {
             max-width: 1140px;
             margin: 0 auto;
@@ -97,7 +103,7 @@
 
         section {
             background-color: var(--white);
-            border-radius: 20px; /* Softer, friendlier corners */
+            border-radius: 20px;
             padding: 3rem;
             margin-bottom: 3rem;
             box-shadow: 0 10px 30px rgba(15, 76, 92, 0.04);
@@ -108,30 +114,25 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Playful pop-out effect on hover */
         section:hover {
             transform: translateY(-4px);
             box-shadow: 0 15px 35px rgba(15, 76, 92, 0.08);
         }
 
-        /* Desktop split layout */
+        /* Responsive Split & Alternating Timeline Grid */
         @media (min-width: 768px) {
             section {
                 grid-template-columns: 1fr 1fr;
                 gap: 4rem;
             }
-            #hero {
-                grid-template-columns: 1fr;
-                text-align: center;
-                background: linear-gradient(180deg, #ffffff 0%, #f9fdfa 100%);
-            }
-            /* Alternating grid rows for visual interest */
             section:nth-of-type(even) .section-content {
-                order: 2;
+                order: 2; /* Reverses column flow dynamically */
             }
         }
 
-        /* 4. Typography & Buttons */
+        /* ==========================================
+           TYPOGRAPHY & BUTTON DESIGN
+           ========================================== */
         h1 {
             font-size: 2.5rem;
             font-weight: 800;
@@ -159,20 +160,13 @@
             border-radius: 10px;
         }
 
-        p {
-            font-size: 1.1rem;
-            color: #52606d;
+        .section-text-large {
+            font-size: 1.2rem;
+            color: #4a5568;
+            line-height: 1.8;
             margin-bottom: 1.5rem;
         }
-        
-        .section-text-large {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: #3e4c59;
-            line-height: 1.7;
-        }
 
-        /* Call To Action Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -192,11 +186,12 @@
             box-shadow: 0 6px 20px rgba(15, 76, 92, 0.25);
         }
 
-        /* 5. Clean, Lively Images */
+        /* ==========================================
+           CONSISTENT HOVER-ZOOM IMAGES
+           ========================================== */
         .section-img {
             width: 100%;
-            height: auto;
-            max-height: 380px;
+            height: 340px;
             object-fit: cover;
             border-radius: 16px;
             box-shadow: 0 12px 24px rgba(15, 76, 92, 0.08);
@@ -204,17 +199,12 @@
         }
 
         section:hover .section-img {
-            transform: scale(1.02); /* Slight lively zoom on hover */
+            transform: scale(1.02);
         }
 
-        #hero .section-img {
-            max-height: 420px;
-            max-width: 80%;
-            margin: 2rem auto 0 auto;
-            display: block;
-        }
-
-        /* 6. Footer */
+        /* ==========================================
+           FOOTER STYLING
+           ========================================== */
         footer {
             background-color: var(--primary-color);
             color: var(--white);
@@ -229,7 +219,7 @@
 <body>
 
     <header class="sit-header">
-        <h1 class="sit-logo">🌿 GREEN NURSERY</h1>
+        <a href="./index.html" class="sit-logo">🌿 GREEN NURSERY</a>
         <nav>
             <a class="nav-link" href="./index.html">HOME</a>
             <a class="nav-link" href="./pages/about.html">ABOUT US</a>
@@ -243,42 +233,50 @@
     <main>
         <!-- Hero Section -->
         <section id="hero">
-            <div class="hero-content">
+            <div class="section-content">
                 <h1>Bring Your Space to Life</h1>
-                <p class="section-text-large">We are a dedicated plant-care organization offering hand-picked greenery, specialized botanical treatments, and everything you need to build your perfect garden oasis.</p>
-                <a href="./pages/products.html" class="btn">Explore Plants ✨</a>
+                <p class="section-text-large">
+                    Green Nursery is a dedicated plant-care organization. We look after plants, offer beautiful layout arrays, and provide essential, top-tier products for your agricultural plantation needs.
+                </p>
+                <a href="./pages/products.html" class="btn">Explore Store ✨</a>
             </div>
-            <img class="section-img" src="./assets/1000_F_1984458249_cx2BqRm1KyxSh16vZyl1JjljgDPXczpH.jpg" alt="Green Nursery main display">
+            <img class="section-img" src="./assets/1000_F_1984458249_cx2BqRm1KyxSh16vZyl1JjljgDPXczpH.jpg" alt="Green Nursery layout view">
         </section>
 
         <!-- About Section -->
         <section id="about">
             <div class="section-content">
-                <h2>Our Roots</h2>
-                <p class="section-text-large">Green Earth Nursery began as a small passion project. Today, we help our local community cultivate vibrant, thriving, and healthy home environments.</p>
-                <a href="./pages/about.html" class="btn">Learn Our Story</a>
+                <h2>About Us</h2>
+                <p class="section-text-large">
+                    Green Earth Nursery is a specialized, local plant sanctuary. We strive to provide premium horticultural care advice and beautiful flora varieties for your homes.
+                </p>
+                <a href="./pages/about.html" class="btn">Our Full Roots</a>
             </div>
-            <img class="section-img" src="./assets/thumbnail-subdept.jpg" alt="About our nursery">
+            <img class="section-img" src="./assets/thumbnail-subdept.jpg" alt="Inside the plant greenhouse">
         </section>
 
         <!-- Services Section -->
         <section id="services">
             <div class="section-content">
-                <h2>Expert Care Services</h2>
-                <p class="section-text-large">From personalized plant consultations to routine maintenance setup, our plant specialists are always here to assist you at every stage of growth.</p>
-                <a href="./pages/services.html" class="btn">View All Services</a>
+                <h2>Our Services</h2>
+                <p class="section-text-large">
+                    We try our absolute best to assist you and provide exceptional maintenance setups, support guidance, and direct garden treatments.
+                </p>
+                <a href="./pages/services.html" class="btn">View All Offerings</a>
             </div>
-            <img class="section-img" src="./assets/240_F_293663725_HMEfPPsrJh1Z4ICBtrhYFZbE6c4kPTZX.jpg" alt="Our plant services">
+            <img class="section-img" src="./assets/240_F_293663725_HMEfPPsrJh1Z4ICBtrhYFZbE6c4kPTZX.jpg" alt="Plant grooming and potting assistance">
         </section>
 
         <!-- Contact Section -->
         <section id="contact">
             <div class="section-content">
-                <h2>Get In Touch</h2>
-                <p class="section-text-large">Have a sick plant or need custom design advice? Drop us a line, and our green thumbs will get right back to you with custom solutions.</p>
-                <a href="./pages/contact.html" class="btn">Message Us</a>
+                <h2>Contact Us</h2>
+                <p class="section-text-large">
+                    Please get in touch with our friendly green thumbs if you run into any garden issues or need troubleshooting help.
+                </p>
+                <a href="./pages/contact.html" class="btn">Get In Touch</a>
             </div>
-            <img class="section-img" src="./assets/1000_F_463635935_IweuYhCqZRtHp3SLguQL8svOVroVXvvZ.jpg" alt="Contact Green Nursery">
+            <img class="section-img" src="./assets/1000_F_463635935_IweuYhCqZRtHp3SLguQL8svOVroVXvvZ.jpg" alt="Nursery consultation desk info">
         </section>
     </main>
 

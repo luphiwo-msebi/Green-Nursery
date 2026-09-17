@@ -1,74 +1,100 @@
+/* ==========================================================================
+   Typography & Base Styles
+   ========================================================================== */
+
+/* Imports the cursive font 'Dancing Script' from Google Fonts */
+
 @import url(https://fonts.google.com/specimen/Dancing+Script);
 
-h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: larger;
-    text-align: center;
-    color: rgb(192, 147, 0);
-    margin: 20px 0;
-}
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* Styles all Heading 1 elements */
+h1 { 
+  font-family: 'Dancing Script', cursive; /* Applies the imported cursive font */
+  font-size: larger;                      /* Makes text larger than standard body text */
+  text-align: center;                     /* Centers the heading text */
+  color: rgb(192, 147, 0);                /* Sets text color to a dark gold/yellow */
+  margin: 20px 0;                         /* Adds 20px spacing above and below the heading */
+} 
 
-html {
-    scroll-behavior: smooth;
-}
+/* Universal reset: Applies to every element (*) on the webpage */
+* { 
+  box-sizing: border-box;                 /* Includes padding/borders in the element's total width/height */
+  margin: 0;                              /* Removes default browser margins */
+  padding: 0;                             /* Removes default browser padding */
+} 
 
-body {
-    font-family: 'Dancing Script', cursive;
-    background-attachment: white;
-    color: #000;
-    line-height: 1.6;
-}
+/* Styles the root HTML element */
+html { 
+  scroll-behavior: smooth;                /* Enables smooth scrolling animation when clicking anchor links */
+} 
 
-/* Navigation Bar Styles */
-.sit-header {
-    background: linear-gradient(135deg, #111827, #1f2937);
-    padding: 20px 8%;
-    display: flex;
-    align-items: center;
-    top: 0;
-    border: burlywood;
-    color: aliceblue;
-    z-index: 1000;
-}
+/* Styles the entire page body */
+body { 
+  font-family: 'Dancing Script', cursive; /* Applies the cursive font to all text by default */
+  background-attachment: white;           /* Note: Intended for background behavior */
+  color: #000;                            /* Sets default text color to black */
+  line-height: 1.6;                       /* Increases line height for better text readability */
+} 
 
-.sit- logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #00ff6a;
-    text-decoration: none;
-}
 
-.main-navigation {
-    gap: 20px;
-    display: flex;
-}
+/* ==========================================================================
+   Navigation Bar Styles
+   ========================================================================== */
 
-.nav-link {
-    color: #d6b912;
-    padding: 8px 12px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
+/* Styles the main container header */
+.sit-header { 
+  background: linear-gradient(135deg, #111827, #1f2937); /* Dark grey/blue diagonal gradient background */
+  padding: 20px 8%;                       /* Adds 20px top/bottom padding and 8% left/right padding */
+  display: flex;                          /* Enforces Flexbox layout for inner items */
+  align-items: center;                    /* Vertically aligns header contents to the center */
+  top: 0;                                 /* Positions header at the very top of its container */
+  border: burlywood;                      /* Assigns the burlywood color to the border */
+  color: aliceblue;                       /* Sets text color to a very light blue/white */
+  z-index: 1000;                          /* Ensures the header stacks on top of other content layers */
+} 
 
-.nav-link {
-    background-color: blanchedalmond;
-    color: honeydew;
-}
+/* Styles the branding logo within the header */
+.sit- logo { 
+  font-size: 24px;                        /* Sets font size to 24 pixels */
+  font-weight: bold;                      /* Makes the logo text bold */
+  color: #00ff6a;                         /* Sets logo text color to a bright neon green */
+  text-decoration: none;                  /* Removes the default underline from the link */
+} 
 
-/* Main Content Styles */
-.main-content {
-    width: auto;
-    padding: 20px 8%;
-    min-height: auto;
-}
+/* Styles the container holding the navigation menu links */
+.main-navigation { 
+  gap: 20px;                              /* Spaces navigation menu links 20 pixels apart */
+  display: flex;                          /* Arranges menu links horizontally using Flexbox */
+} 
 
-section {
-    padding: 60px 8%;
+/* Base styles for navigation links */
+.nav-link { 
+  color: #d6b912;                         /* Sets navigation text color to a muted gold/yellow */
+  padding: 8px 12px;                      /* Adds 8px vertical and 12px horizontal padding inside links */
+  text-decoration: none;                  /* Removes the default link underline */
+  font-size: 18px;                        /* Sets font size to 18 pixels */
+  transition: color 0.3s ease;            /* Adds a smooth 0.3-second transition effect for color changes */
+} 
+
+/* Extended styles for navigation links */
+.nav-link { 
+  background-color: blanchedalmond;       /* Sets link background color to a soft, light cream */
+  color: honeydew;                        /* Sets link text color to a very light, soft green/white */
+} 
+
+
+/* ==========================================================================
+   Main Content Styles
+   ========================================================================== */
+
+/* Styles the primary page wrapper class */
+.main-content { 
+  width: auto;                            /* Automatically calculates width based on browser default rules */
+  padding: 20px 8%;                       /* Adds 20px top/bottom padding and 8% left/right padding */
+  min-height: auto;                       /* Automatically sets minimum height based on inner elements */
+} 
+
+/* Styles standard semantic section blocks on the page */
+section { 
+  padding: 60px 8%;                       /* Generates large 60px breathing room top/bottom and 8% left/right spacing */
 }

@@ -3,60 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>GREEN NURSERY | CONTACT</title>
+    <style>
+        /* 1. Global Reset & Shared Brand Variables */
+        :root {
+            --primary-color: #0f4c5c; /* Deep lush emerald teal */
+            --secondary-color: #06d6a0; /* Vibrant mint neon accent */
+            --dark-color: #1d2d44; /* Crisp deep slate for high-readability text */
+            --light-bg: linear-gradient(135deg, #f4f9f4 0%, #e8f5e9 100%);
+            --white: #ffffff;
+            --font-stack: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background: var(--light-bg);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* 2. Header & Navigation */
+        .sit-header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(15, 76, 92, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+        }
+
+        .sit-logo {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* 3. Layout Structure & Containers */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        section {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(15, 76, 92, 0.04);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(15, 76, 92, 0.08);
+        }
+
+        /* 4. Typography Elements */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -6px;
+            height: 4px;
+            width: 50px;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+        }
+
+        .section-text-large {
+            font-size: 1.2rem;
+            color: #4a5568;
+            max-width: 680px;
+            line-height: 1.8;
+        }
+
+        /* 5. Modern Data Badges & Lists */
+        .info-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 1rem;
+        }
+
+        .info-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+        }
+
+        .info-item strong {
+            color: var(--primary-color);
+        }
+
+        /* 6. Clean Responsive Media Elements */
+        .section-img {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .map-wrapper {
+            width: 100%;
+            margin-top: 1.5rem;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(15, 76, 92, 0.08);
+            border: 1px solid #e2e8f0;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 400px;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
-    <header>
+
+    <header class="sit-header">
+        <a href="../index.html" class="sit-logo">🌿 GREEN NURSERY</a>
         <nav>
-            <a class="nav-link"href="../index.html">HOME</a>
+            <a class="nav-link" href="../index.html">HOME</a>
             <a class="nav-link" href="../pages/about.html">ABOUT US</a>
             <a class="nav-link" href="../pages/contact.html">CONTACT US</a>
             <a class="nav-link" href="../pages/inquiry.html">INQUIRY</a>
             <a class="nav-link" href="../pages/products.html">PRODUCTS</a>
-            <a class="nav-link" href="../pages/services.html">SERVICES</a> 
+            <a class="nav-link" href="../pages/services.html">SERVICES</a>
         </nav>
     </header>
-    <!--Main Section-->
+
     <main>
-        <section>
-            <img src="../assets/images.png" width="30%" height="30%" alt="main image">
-            <h1 style="text-align: center;">Contact Us</h1>
-            <p style="font-size: larger; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-               We at Green Nursery prioritaize the wellness of plant life and building a community,
-               bonds through plants and shared care for nature.
-            </p><br/>
-            <hr/>
+        <!-- Welcome Section -->
+        <section id="welcome">
+            <img class="section-img" src="../assets/images.png" alt="Plant community icon">
+            <h1>Contact Us</h1>
+            <p class="section-text-large">
+                We at Green Nursery prioritize the wellness of plant life and building a community bound together through plants and a shared care for nature.
+            </p>
         </section>
-        <!--Contact details-->
-        <section>
-            <img src="../assets/phone-circles-set_78370-6582.avif" width="30%" height="30%" alt="main image">
-            <h1 style="text-align: center;">To Get a Hold of Us</h1>
-            <ul>
-                <li>Email: green@nursery.com</li>
-                <li>Phone: 0724544494 </li>
-                <li>Hours: Tueasday to Saturday, 9:00 AM - 3:00 PM EST</li>
+
+        <!-- Communication Details -->
+        <section id="details">
+            <img class="section-img" src="../assets/phone-circles-set_78370-6582.avif" alt="Communication methods icon">
+            <h1>Get In Touch</h1>
+            <ul class="info-list">
+                <li class="info-item">✉️ <strong>Email:</strong> green@nursery.com</li>
+                <li class="info-item">📞 <strong>Phone:</strong> 0724544494</li>
+                <li class="info-item">⏰ <strong>Hours:</strong> Tuesday to Saturday, 9:00 AM - 3:00 PM EST</li>
             </ul>
-            <br/><hr/>
         </section>
-        <!--Location details-->
-        <section>
-            <h1 style="text-align: center;">Our Base Of Opporations</h1>
-            <ul>
-                <li>Address: 62 Newlands Rd, Newlands, Johannesburg, 2092</li>
-                <li>Map: View on Google Maps</li>
+
+        <!-- Operational Base Map -->
+        <section id="location">
+            <h1>Our Base of Operations</h1>
+            <ul class="info-list">
+                <li class="info-item">📍 <strong>Address:</strong> 62 Newlands Rd, Newlands, Johannesburg, 2092</li>
             </ul>
-            <!--Google Maps-->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916720.7897499097!2d28.04001525997889!3d-26.166064411741083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950bf4cb455a13%3A0xada20f6deb710ae4!2sGreen%20Fingers!5e0!3m2!1sen!2sza!4v1786690288357!5m2!1sen!2sza" 
-            width="600" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="strict-origin-when-cross-origin">
-            </iframe><br/><br/>
-            <hr/>
+            
+            <!-- Embedded Responsive Google Map Container -->
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916720.7897499097!2d28.04001525997889!3d-26.166064411741083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950bf4cb455a13%3A0xada20f6deb710ae4!2sGreen%20Fingers!5e0!3m2!1sen!2sza!4v1786690288357!5m2!1sen!2sza" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="strict-origin-when-cross-origin">
+                </iframe>
+            </div>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 Green Nursery. Cultivating joy, one leaf at a time.</p>
+    </footer>
+
 </body>
 </html>

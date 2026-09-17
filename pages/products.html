@@ -4,12 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title></title>
+    <title>GREEN NURSERY | PRODUCTS</title>
+    <style>
+        /* 1. Global Reset & Shared Brand Variables */
+        :root {
+            --primary-color: #0f4c5c; /* Deep lush emerald teal */
+            --secondary-color: #06d6a0; /* Vibrant mint neon accent */
+            --dark-color: #1d2d44; /* Crisp deep slate for high-readability text */
+            --light-bg: linear-gradient(135deg, #f4f9f4 0%, #e8f5e9 100%);
+            --white: #ffffff;
+            --font-stack: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background: var(--light-bg);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* 2. Header & Navigation */
+        .sit-header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(15, 76, 92, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+        }
+
+        .sit-logo {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* 3. Layout Structure & Title */
+        main {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .store-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -8px;
+            height: 4px;
+            width: 60px;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+        }
+
+        /* 4. Responsive Product Grid System */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            list-style: none;
+        }
+
+        /* 5. Product Card Component Styling */
+        .product-card {
+            background-color: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(15, 76, 92, 0.04);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(226, 232, 240, 0.6);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(15, 76, 92, 0.09);
+        }
+
+        /* Uniform aspect handling block for varying user images */
+        .image-container {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background-color: #fafbfc;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #f1f5f9;
+            overflow: hidden;
+        }
+
+        .product-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        /* Details info area inside cards */
+        .product-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            line-height: 1.4;
+            margin-bottom: 0.75rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 2.8rem; /* Keeps titles uniform line spacing */
+        }
+
+        .price-badge {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-top: auto;
+            margin-bottom: 1rem;
+        }
+
+        /* Interactive Store Button Action */
+        .btn-cart {
+            width: 100%;
+            border: none;
+            background-color: #f0fdf4;
+            color: #166534;
+            padding: 0.8rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: 1px solid #dcfce7;
+        }
+
+        .btn-cart:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        /* Footer styling alignment */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }    </style>
 </head>
 <body>
-    <header>
+
+    <header class="sit-header">
+        <a href="../index.html" class="sit-logo">🌿 GREEN NURSERY</a>
         <nav>
-            <a class="nav-link"href="../index.html">HOME</a>
+            <a class="nav-link" href="../index.html">HOME</a>
             <a class="nav-link" href="../pages/about.html">ABOUT US</a>
             <a class="nav-link" href="../pages/contact.html">CONTACT US</a>
             <a class="nav-link" href="../pages/inquiry.html">INQUIRY</a>
@@ -17,31 +247,75 @@
             <a class="nav-link" href="../pages/services.html">SERVICES</a>
         </nav>
     </header>
-    <!--Product Menu-->
+
     <main>
-        <section>
-            <h1 style="text-align: center;">Product for Offer</h1>
-            <ul>
-                <li>Plant Boost Spray: R50</li>
-                <img src="../assets/Plant Booster Spray.webp" width="75%" height="75%" alt="main image">
+        <div class="store-header">
+            <h1>Our Products</h1>
+        </div>
 
-                <li>Bookay of flowers: R90</li>
-                <img src="../assets/shopping.webp" width="75%" height="75%" alt="main image">
+        <!-- Optimized E-commerce Grid Menu -->
+        <ul class="products-grid">
+            
+            <!-- Item 1 -->
+            <li class="product-card">
+                <div class="image-container">
+                    <img class="product-img" src="../assets/Plant Booster Spray.webp" alt="Plant Boost Spray">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-title">Plant Boost Spray</h2>
+                    <div class="price-badge">R50</div>
+                    <button class="btn-cart">🛒 Add To Cart</button>
+                </div>
+            </li>
 
-                <li>Tramontina Special Carbon Steel and Wood Handle Garden Tool 3-Piece Set: R150</li>
-                <img src="../assets/51-R8OUkoTL._AC_SX425_.jpg" width="75%" height="75%" alt="main image">
+            <!-- Item 2 -->
+            <li class="product-card">
+                <div class="image-container">
+                    <img class="product-img" src="../assets/shopping.webp" alt="Fresh Bouquet of Flowers">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-title">Fresh Bouquet of Flowers</h2>
+                    <div class="price-badge">R90</div>
+                    <button class="btn-cart">🛒 Add To Cart</button>
+                </div>
+            </li>
 
-                <li>CJGQ Fabric Raised Garden Bed 4x2x1ft Garden Grow Bed Bags for Growing Herbs, Flowers and Vegetables 55 Gallon: R300 </li>
-                <img src="../assets/81NelNrkBQL._AC_SX425_.jpg" width="75%" height="75%" alt="main image">
+            <!-- Item 3 -->
+            <li class="product-card">
+                <div class="image-container">
+                    <img class="product-img" src="../assets/51-R8OUkoTL._AC_SX425_.jpg" alt="Tramontina 3-Piece Garden Tool Set">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-title">Tramontina Special Carbon Steel & Wood Handle Garden Tool Set (3-Piece)</h2>
+                    <div class="price-badge">R150</div>
+                    <button class="btn-cart">🛒 Add To Cart</button>
+                </div>
+            </li>
 
-                <li>Plant Care, 100ml: R135</li>
-                <img src="../assets/plant_care_makhro_home_and_garden_5000x.webp" width="75%" height="75%" alt="main image">
+            <!-- Item 4 -->
+            <li class="product-card">
+                <div class="image-container">
+                    <img class="product-img" src="../assets/81NelNrkBQL._AC_SX425_.jpg" alt="CJGQ Fabric Raised Garden Bed Bag">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-title">CJGQ Fabric Raised Garden Grow Bed Bags (4x2x1ft, 55 Gallon)</h2>
+                    <div class="price-badge">R300</div>
+                    <button class="btn-cart">🛒 Add To Cart</button>
+                </div>
+            </li>
 
-                <li>Vermic Compost: R425</li>
-                <img src="../assets/Primary_webp_23_4957d27d-50d7-4d28-ad8c-1cb0e4b2e833.webp" width="75%" height="75%" alt="main image">
-
-            </ul>
-        </section>
+            <!-- Item 5 -->
+            <li class="product-card">
+                <div class="image-container">
+                    <img class="product-img" src="../assets/plant_care_makhro_home_and_garden_5000x.webp" alt="Makhro Plant Care">
+                </div>
+                <div class="product-info">
+                    <h2 class="product-title">Makhro Plant Care</h2>
+                    <div class="price-badge">R200</div>
+                    <button class="btn-cart">🛒 Add To Cart</button>
+                </div>
+            </li>
+        </ul>
     </main>
 </body>
 </html>

@@ -5,9 +5,232 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <title>GREEN NURSERY | INQUIRY</title>
+    <style>
+        /* 1. Global Reset & Shared Brand Variables */
+        :root {
+            --primary-color: #0f4c5c; /* Deep lush emerald teal */
+            --secondary-color: #06d6a0; /* Vibrant mint neon accent */
+            --dark-color: #1d2d44; /* Crisp deep slate for high-readability text */
+            --light-bg: linear-gradient(135deg, #f4f9f4 0%, #e8f5e9 100%);
+            --white: #ffffff;
+            --font-stack: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background: var(--light-bg);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* 2. Header & Navigation */
+        .sit-header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(15, 76, 92, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+        }
+
+        .sit-logo {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* 3. Layout Structure & Containers */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .form-card {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(15, 76, 92, 0.04);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Responsive Dual Column for Desktop */
+        @media (min-width: 768px) {
+            .form-card {
+                grid-template-columns: 1fr 1.2fr;
+            }
+            .form-sidebar {
+                position: sticky;
+                top: 120px;
+            }
+        }
+
+        /* 4. Typography Elements */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            height: 4px;
+            width: 50px;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+        }
+
+        .lead-text {
+            font-size: 1.1rem;
+            color: #52606d;
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        /* 5. Modern Form Elements Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            width: 100%;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            font-family: var(--font-stack);
+            font-size: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            background-color: #f8fafc;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+
+        /* Focus & interactive outlines */
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background-color: var(--white);
+            box-shadow: 0 0 0 4px rgba(15, 76, 92, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        /* Custom Dynamic Submit Button */
+        .btn-submit {
+            cursor: pointer;
+            border: none;
+            padding: 1rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(15, 76, 92, 0.15);
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .btn-submit:hover {
+            background-color: #17657a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(15, 76, 92, 0.25);
+        }
+
+        /* 6. Form Image Styling */
+        .section-img {
+            width: 100%;
+            height: auto;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 12px 24px rgba(15, 76, 92, 0.08);
+        }
+    </style>
 </head>
 <body>
-    <header>
+
+    <header class="sit-header">
+        <a href="../index.html" class="sit-logo">🌿 GREEN NURSERY</a>
         <nav>
             <a class="nav-link" href="../index.html">HOME</a>
             <a class="nav-link" href="../pages/about.html">ABOUT US</a>
@@ -17,37 +240,52 @@
             <a class="nav-link" href="../pages/services.html">SERVICES</a>
         </nav>
     </header>
-     <main>
-        <section>
-           <h1 style="text-align: center;">Inquiry Form</h1>
-            <!--Create a form-->
-            <img src="../assets/1000_F_293663706_t3a40htJMEWjdRxaZmmcnBPkyOBPsWkc.jpg" width="25%" height="25%" alt="main image">
-            <form action="#" method="POST">
-              <label for="name" name="name">Your Name:</label><br/>
-              <input type="text" id="name" placeholder=" Tell us who you are " required>
-              <br/><br/>
-              <label for="email" name="email">Email Address:</label><br/>
-              <input type="email" name="email" placeholder="Where we can reply to you " required>
-              <br/><br/>
-              <label for="proj_type" name="proj_type">Project Type:</label><br/>
-              <select>
-                <option value="">--Select--</option>
-                <option value="">Garderning tools</option>
-                <option value="">Plant Care Sevires</option>
-                <option value="">Pottery care</option>
-              </select>
-              <br/><br/>
-              <label for="budget" name="budget">Estimated Budget:</label><br/>
-              <input type="number" name="budget" min="0" placeholder="Helps us suggest the right solution." required>
-              <br/><br/>
-              <label for="message" name="message">Message</label><br/>
-              <textarea name="message" rows="10" cols="40" placeholder="Helps us suggest the right solution." required>
 
-              </textarea>
-              <br/><br/>
-              <button type="submit">Submit</button>
-             </form> 
-        </section>
+    <main>
+        <div class="form-card">
+            <!-- Sidebar Image Block -->
+            <div class="form-sidebar">
+                <h1>Inquiry Form</h1>
+                <p class="lead-text">Have an upcoming landscape layout project or need advice on bulk plant solutions? Fill out the details below and our nursery managers will assemble a custom proposal matching your budget limitations.</p>
+                <img class="section-img" src="../assets/1000_F_293663706_t3a40htJMEWjdRxaZmmcnBPkyOBPsWkc.jpg" alt="Botanical expert managing plants">
+            </div>
+
+            <!-- Main Input Form Module -->
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Tell us who you are" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Where we can reply to you" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="proj_type">Project Type</label>
+                    <select id="proj_type" name="proj_type" required>
+                        <option value="" disabled selected>-- Select an option --</option>
+                        <option value="gardening-tools">Gardening Tools</option>
+                        <option value="plant-care">Plant Care Services</option>
+                        <option value="pottery-care">Pottery Care</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Estimated Budget (ZAR)</label>
+                    <input type="number" id="budget" name="budget" min="0" placeholder="Helps us suggest the right solution" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Detailed Message</label>
+                    <textarea id="message" name="message" placeholder="Describe your workspace, plant preferences, or key questions..." required></textarea>
+                </div>
+
+                <button class="btn-submit" type="submit">Submit Inquiry ✨</button>
+            </form> 
+        </div>
     </main>
+
 </body>
 </html>
