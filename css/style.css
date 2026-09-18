@@ -86,6 +86,10 @@ body {
 Hamburger Button (Five Lines)
 ============================================================================= */
 /* ========================================== MOBILE HAMBURGER NAVIGATION ========================================== */
+.menu-toggle {
+    display: none; /* Hide the actual checkbox input */
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -103,6 +107,46 @@ Hamburger Button (Five Lines)
     background-color: var(--primary-color);
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Screen sizes below 768px */
+@media (max-width: 767px) {
+    .hamburger {
+        display: flex; /* Show the label button on mobile */
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hide navigation panel off-screen */
+        width: 70%;
+        height: 100vh;
+        background-color: var(--white);
+        box-shadow: -10px 0 30px rgba(15, 76, 92, 0.1);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        transition: right 0.4s ease-in-out;
+    }
+
+    /* Triggered when checkbox is checked */
+    #menu-toggle:checked ~ nav {
+        right: 0; /* Slide menu into view */
+    }
+
+    /* Transform hamburger into an 'X' icon when checked */
+    #menu-toggle:checked ~ .hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    #menu-toggle:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0; /* Hide middle line */
+    }
+    
+    #menu-toggle:checked ~ .hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
 
 
