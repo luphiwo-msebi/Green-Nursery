@@ -100,3 +100,119 @@ The website will include:
 
 ==========================================================================================================================================
 
+- Part Two: CSS Architectural Rules and Design Additions
+
+This document profiles the CSS extensions appended to style.css to structure the Green Earth Nursery digital storefront expansion. The updates implement responsive layouts, structural forms, and components aligned with contemporary accessibility practices while preserving your core styling foundation.
+
+## 1. Global Typography Adjustments & Form Standardisation
+To reconcile text readability with standard browser controls, basic accessibility parameters were established:
+
+*   **Font Contrast Refinement:** While keeping the signature decorative cursive 'Dancing Script', structural form labels, placeholder prompts, input lists, and card interfaces have fallback typography parameters implemented natively to ensure maximum clarity on small touch interfaces.
+*   **Footer Realignment:** A baseline container style was injected to guarantee text legibility against complex content blocks:
+    ```css
+    footer {
+        background-color: #111827;
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        font-size: 14px;
+    }
+    ```
+
+## 2. Flexbox/Grid Architectural Additions
+To shift the local plant nursery into an enterprise-ready eCommerce portal, multi-column configurations were mapped to manage content without overlapping layout errors:
+
+*   **The E-Commerce Product Grid (`.product-grid`):** Built as an auto-fitting grid engine that shifts rows automatically according to viewport limitations.
+    ```css
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        padding: 20px 0;
+    }
+    .product-card {
+        background-color: #f9f9f9;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.2s ease;
+    }
+    .product-card:hover {
+        transform: translateY(-5px);
+    }
+    ```
+*   **The Contact Split View (`.contact-grid`):** Leverages responsive flex arrangements to lock down geographic map coordinates parallel to incoming data input channels.
+    ```css
+    .contact-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    .contact-info, .contact-form-container {
+        flex: 1 1 400px;
+    }
+    ```
+
+## 3. UI Components & Structured Interactive Forms
+Interactive blocks were assigned properties to match form submission structures across desktop and mobile screens:
+
+*   **Universal Button Element (`.btn`):** Standardised button appearance with interactive feedback transitions:
+    ```css
+    .btn {
+        background-color: #00ff6a;
+        color: #111827;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+        background-color: #00cc55;
+    }
+    ```
+*   **Stacked Entry Forms (`.stacked-form`):** Establishes explicit row spacing for standard structural forms like your customer contact and consultation intake fields.
+    ```css
+    .stacked-form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #1f2937;
+    }
+    .stacked-form input, 
+    .stacked-form select, 
+    .stacked-form textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    ```
+
+## 4. Mobile Responsiveness Controls & Media Query Fixes
+Your CSS template utilizes an interactive `#menu-toggle:checked ~ nav` checkbox routine to slide out hidden navigation arrays on screens smaller than 767px wide. 
+
+To bridge this with the improved semantic framework, the standard CSS token parameters were extended to resolve missing asset exceptions:
+*   **Root Variable Fallbacks:** Added CSS variables to prevent rendering breaks if components look for `--white` or `--primary-color`.
+*   **Responsive Media Fixes:** Embedded explicit frame constraints to stop third-party assets like Google Maps or layout images from breaking horizontal margins.
+    ```css
+    /* Responsive Map Container */
+    .map-container {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-top: 15px;
+    }
+    .map-container iframe {
+        width: 100% !important;
+        height: 300px;
+    }
+    ```
+    ==================================================================================================================================================================================================================================================================================================
