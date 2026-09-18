@@ -93,6 +93,72 @@
         }
 
         /* ==========================================
+           PURE CSS HAMBURGER MENU WORKINGS
+           ========================================== */
+        .menu-toggle {
+            display: none; /* Hide the actual checkbox input */
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        /* Screen sizes below 768px */
+        @media (max-width: 767px) {
+            .hamburger {
+                display: flex; /* Show the label button on mobile */
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%; /* Hide navigation panel off-screen */
+                width: 70%;
+                height: 100vh;
+                background-color: var(--white);
+                box-shadow: -10px 0 30px rgba(15, 76, 92, 0.1);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2.5rem;
+                transition: right 0.4s ease-in-out;
+            }
+
+            /* Triggered when checkbox is checked */
+            #menu-toggle:checked ~ nav {
+                right: 0; /* Slide menu into view */
+            }
+
+            /* Transform hamburger into an 'X' icon when checked */
+            #menu-toggle:checked ~ .hamburger span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            #menu-toggle:checked ~ .hamburger span:nth-child(2) {
+                opacity: 0; /* Hide middle line */
+            }
+            
+            #menu-toggle:checked ~ .hamburger span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+
+        /* ==========================================
            DYNAMIC RESPONSIVE SECTIONS
            ========================================== */
         main {
@@ -220,15 +286,17 @@
 
     <header class="sit-header">
         <a href="./index.html" class="sit-logo">🌿 GREEN NURSERY</a>
+        
         <!-- Hidden checkbox to track menu state -->
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    
-    <!-- Hamburger label acting as the clickable button -->
-    <label for="menu-toggle" class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </label>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        <!-- Hamburger label acting as the clickable button -->
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        
         <nav>
             <a class="nav-link" href="./index.html">HOME</a>
             <a class="nav-link" href="./pages/about.html">ABOUT US</a>
@@ -237,7 +305,6 @@
             <a class="nav-link" href="./pages/products.html">PRODUCTS</a>
             <a class="nav-link" href="./pages/services.html">SERVICES</a>
         </nav>
-        
     </header>
 
     <main>
@@ -246,20 +313,7 @@
             <div class="section-content">
                 <h1>Bring Your Space to Life</h1>
                 <p class="section-text-large">
-                    Green Nursery is a dedicated plant-care organization. We look after plants, offer beautiful layout arrays, and provide essential, top-tier products for your agricultural plantation needs.
-                </p>
-                <a href="./pages/products.html" class="btn">Explore Store ✨</a>
-            </div>
-            <img class="section-img" src="./assets/1000_F_1984458249_cx2BqRm1KyxSh16vZyl1JjljgDPXczpH.jpg" alt="Green Nursery layout view">
-        </section>
 
-        <!-- About Section -->
-        <section id="about">
-            <div class="section-content">
-                <h2>About Us</h2>
-                <p class="section-text-large">
-                    Green Earth Nursery is a specialized, local plant sanctuary. We strive to provide premium horticultural care advice and beautiful flora varieties for your homes.
-                </p>
                 <a href="./pages/about.html" class="btn">Our Full Roots</a>
             </div>
             <img class="section-img" src="./assets/thumbnail-subdept.jpg" alt="Inside the plant greenhouse">
