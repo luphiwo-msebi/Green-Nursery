@@ -3,39 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Nursery | Plants &amp; Gardening Services</title>
     <meta name="description" content="Green Nursery - Bring your space to life with our plants and gardening services">
+    <meta property="og:title" content="Green Nursery | Plants &amp; Gardening Services">
+    <meta property="og:description" content="Bring your space to life with our plants and gardening services.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
     <link rel="stylesheet" href="./css/style.css">
-    <title>GREEN NURSERY | HOME</title>
+    <script src="./JS/script.js" defer></script>
+    <script src="../JS/Cart.js" defer></script>
+    <script src="../JS/global-search.js" defer></script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+ 
     <header class="site-header">
-        <a href="./index.html" class="site-logo" aria-label="Green Nursery Home">🌿 GREEN NURSERY</a>
+        <a href="./index.html" class="site-logo" aria-label="Green Nursery Home"><span aria-hidden="true">🌿</span> GREEN NURSERY</a>
         <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
         <label for="menu-toggle" class="hamburger" aria-hidden="true">
             <span></span><span></span><span></span>
         </label>
         <nav aria-label="Main navigation">
-            <a class="nav-link active" href="./index.html">HOME</a>
+            <a class="nav-link active" href="./index.html" aria-current="page">HOME</a>
             <a class="nav-link" href="./pages/about.html">ABOUT US</a>
             <a class="nav-link" href="./pages/products.html">PRODUCTS</a>
             <a class="nav-link" href="./pages/services.html">SERVICES</a>
             <a class="nav-link" href="./pages/contact.html">CONTACT US</a>
             <a class="nav-link" href="./pages/inquiry.html">INQUIRY</a>
         </nav>
-    </header>
 
-    <main>
+        
+    </header>
+ 
+    <main id="main">
         <section id="hero">
             <div class="section-content">
                 <h1>Bring Your Space to Life</h1>
                 <p class="section-text-large">
-                    A green hello to you, fellow plant lover! Thank you for visiting our little plant-filled site, we hope you find what you need. 
+                    A green hello to you, fellow plant lover! Thank you for visiting our little plant-filled site, we hope you find what you need.
                 </p>
                 <a href="./pages/about.html" class="btn">Our Full Roots</a>
             </div>
-            <img class="section-img" src="./assets/min garden.jpg" alt="Lush indoor plants inside the greenhouse">
+            <img class="section-img" src="./assets/min%20garden.jpg" alt="Lush indoor plants inside the greenhouse" width="800" height="600">
         </section>
-
+ 
         <section id="services">
             <div class="section-content">
                 <h2>Our Services</h2>
@@ -44,9 +55,9 @@
                 </p>
                 <a href="./pages/services.html" class="btn">View All Offerings</a>
             </div>
-            <img class="section-img" src="./assets/240_F_293663725_HMEfPPsrJh1Z4ICBtrhYFZbE6c4kPTZX.jpg" alt="Professional plant grooming and potting service">
+            <img class="section-img" src="./assets/240_F_293663725_HMEfPPsrJh1Z4ICBtrhYFZbE6c4kPTZX.jpg" alt="Professional plant grooming and potting service" width="800" height="600" loading="lazy">
         </section>
-
+ 
         <section id="contact">
             <div class="section-content">
                 <h2>Contact Us</h2>
@@ -55,12 +66,15 @@
                 </p>
                 <a href="./pages/contact.html" class="btn">Get In Touch</a>
             </div>
-            <img class="section-img" src="./assets/1000_F_463635935_IweuYhCqZRtHp3SLguQL8svOVroVXvvZ.jpg" alt="Nursery consultation desk">
+            <img class="section-img" src="./assets/Call%20services%20phone.jpg" alt="Nursery consultation desk" width="800" height="600" loading="lazy">
         </section>
     </main>
-
+ 
     <footer>
         <p>&copy; 2026 Green Nursery. Cultivating joy, one leaf at a time.</p>
     </footer>
+ 
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">&uarr;</button>
 </body>
 </html>
+ 

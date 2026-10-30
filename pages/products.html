@@ -3,93 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Green Nursery</title>
     <meta name="description" content="Green Nursery products - plants, tools and care">
+    <meta property="og:title" content="Products | Green Nursery">
+    <meta property="og:description" content="Carefully curated tools and care products for your green space.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
     <link rel="stylesheet" href="../css/style.css">
-    <title>GREEN NURSERY | PRODUCTS</title>
+    <script src="../JS/script.js" defer></script>
+    <script src="../JS/Product.js" defer></script>
+    <script src="../JS/Cart.js" defer></script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+ 
     <header class="site-header">
-        <a href="../index.html" class="site-logo">🌿 GREEN NURSERY</a>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+        <a href="../index.html" class="site-logo" aria-label="Green Nursery Home"><span aria-hidden="true">🌿</span> GREEN NURSERY</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
         <label for="menu-toggle" class="hamburger" aria-hidden="true">
             <span></span><span></span><span></span>
         </label>
         <nav aria-label="Main navigation">
             <a class="nav-link" href="../index.html">HOME</a>
             <a class="nav-link" href="./about.html">ABOUT US</a>
-            <a class="nav-link active" href="./products.html">PRODUCTS</a>
+            <a class="nav-link active" href="./products.html" aria-current="page">PRODUCTS</a>
             <a class="nav-link" href="./services.html">SERVICES</a>
             <a class="nav-link" href="./contact.html">CONTACT US</a>
             <a class="nav-link" href="./inquiry.html">INQUIRY</a>
         </nav>
-    </header>
 
-    <main>
+        
+    </header>
+ 
+    <main id="main">
         <div class="store-header">
             <h1>Our Products</h1>
             <p class="section-text-large">Carefully curated tools and care products for your green space.</p>
+            <div class="product-search-wrapper">
+    <div class="product-search">
+        <label for="product-search" class="visually-hidden">Search products</label>
+        <input type="search" id="product-search" placeholder="Search products (e.g. spray, tools, bed)" autocomplete="off">
+        <p id="search-count" class="search-count" role="status" aria-live="polite"></p>
+    </div>
+    <!-- Live suggestion dropdown box -->
+    <div id="search-suggestions" class="search-suggestions" hidden></div>
+</div>
         </div>
-
+ 
+        <p id="no-results" class="no-results" hidden>No products match &ldquo;<span class="term"></span>&rdquo;. <button type="button" id="clear-search">Clear search</button></p>
+ 
         <ul class="products-grid">
-            <li class="product-card">
+            <li class="product-card" data-id="plant-boost-spray" data-price="50" data-keywords="spray fertilizer feed plant food booster">
                 <div class="image-container">
-                    <img class="product-img" src="../assets/Plant Booster Spray.webp" alt="Plant Boost Spray bottle">
+                    <button type="button" class="zoom-trigger" aria-label="View larger image: Plant Boost Spray bottle"><img class="product-img" src="../assets/Plant%20Booster%20Spray.webp" alt="Plant Boost Spray bottle" width="400" height="400"></button>
                 </div>
                 <div class="product-info">
                     <h2 class="product-title">Plant Boost Spray</h2>
                     <span class="price-badge">R50</span>
-                    <button type="button" class="btn-cart">🛒 Add To Cart</button>
+                    <button type="button" class="btn-cart" aria-label="Add Plant Boost Spray to cart"><span aria-hidden="true">🛒</span> Add To Cart</button>
                 </div>
             </li>
-
-            <li class="product-card">
+ 
+            <li class="product-card" data-id="fresh-bouquet" data-price="90" data-keywords="flowers pot bloom bouquet gift">
                 <div class="image-container">
-                    <img class="product-img" src="../assets/Flower pot.webp" alt="Fresh bouquet of flowers in pot">
+                    <button type="button" class="zoom-trigger" aria-label="View larger image: Fresh bouquet of flowers in pot"><img class="product-img" src="../assets/Flower%20pot.webp" alt="Fresh bouquet of flowers in pot" width="400" height="400"></button>
                 </div>
                 <div class="product-info">
                     <h2 class="product-title">Fresh Bouquet of Flowers</h2>
                     <span class="price-badge">R90</span>
-                    <button type="button" class="btn-cart">🛒 Add To Cart</button>
+                    <button type="button" class="btn-cart" aria-label="Add Fresh Bouquet of Flowers to cart"><span aria-hidden="true">🛒</span> Add To Cart</button>
                 </div>
             </li>
-
-            <li class="product-card">
+ 
+            <li class="product-card" data-id="tramontina-tools" data-price="150" data-keywords="tools trowel spade fork gardening hand">
                 <div class="image-container">
-                    <img class="product-img" src="../assets/51-R8OUkoTL._AC_SX425_.jpg" alt="Tramontina 3-Piece Garden Tool Set">
+                    <button type="button" class="zoom-trigger" aria-label="View larger image: Tramontina 3-Piece Garden Tool Set"><img class="product-img" src="../assets/51-R8OUkoTL._AC_SX425_.jpg" alt="Tramontina 3-Piece Garden Tool Set" width="400" height="400"></button>
                 </div>
                 <div class="product-info">
                     <h2 class="product-title">Tramontina Garden Tool Set (3-Piece)</h2>
                     <span class="price-badge">R150</span>
-                    <button type="button" class="btn-cart">🛒 Add To Cart</button>
+                    <button type="button" class="btn-cart" aria-label="Add Tramontina Garden Tool Set (3-Piece) to cart"><span aria-hidden="true">🛒</span> Add To Cart</button>
                 </div>
             </li>
-
-            <li class="product-card">
+ 
+            <li class="product-card" data-id="raised-grow-bed" data-price="300" data-keywords="raised bed planter bag vegetable grow container">
                 <div class="image-container">
-                    <img class="product-img" src="../assets/81NelNrkBQL._AC_SX425_.jpg" alt="Fabric Raised Garden Bed Bag">
+                    <button type="button" class="zoom-trigger" aria-label="View larger image: Fabric Raised Garden Bed Bag"><img class="product-img" src="../assets/81NelNrkBQL._AC_SX425_.jpg" alt="Fabric Raised Garden Bed Bag" width="400" height="400" loading="lazy"></button>
                 </div>
                 <div class="product-info">
                     <h2 class="product-title">Fabric Raised Garden Grow Bed (55 Gallon)</h2>
                     <span class="price-badge">R300</span>
-                    <button type="button" class="btn-cart">🛒 Add To Cart</button>
+                    <button type="button" class="btn-cart" aria-label="Add Fabric Raised Garden Grow Bed (55 Gallon) to cart"><span aria-hidden="true">🛒</span> Add To Cart</button>
                 </div>
             </li>
-
-            <li class="product-card">
+ 
+            <li class="product-card" data-id="makhro-plant-care" data-price="200" data-keywords="care kit soil home garden">
                 <div class="image-container">
-                    <img class="product-img" src="../assets/plant_care_makhro_home_and_garden_5000x.webp" alt="Makhro Plant Care product">
+                    <button type="button" class="zoom-trigger" aria-label="View larger image: Makhro Plant Care product"><img class="product-img" src="../assets/plant_care_makhro_home_and_garden_5000x.webp" alt="Makhro Plant Care product" width="400" height="400" loading="lazy"></button>
                 </div>
                 <div class="product-info">
                     <h2 class="product-title">Makhro Plant Care</h2>
                     <span class="price-badge">R200</span>
-                    <button type="button" class="btn-cart">🛒 Add To Cart</button>
+                    <button type="button" class="btn-cart" aria-label="Add Makhro Plant Care to cart"><span aria-hidden="true">🛒</span> Add To Cart</button>
                 </div>
             </li>
         </ul>
     </main>
-
+ 
     <footer>
         <p>&copy; 2026 Green Nursery. Cultivating joy, one leaf at a time.</p>
     </footer>
+ 
+    <dialog id="zoom-dialog" class="zoom-dialog" aria-label="Product image viewer">
+        <div class="zoom-toolbar">
+            <button type="button" data-zoom="out" aria-label="Zoom out">&minus;</button>
+            <span id="zoom-level" class="zoom-level" aria-live="polite">100%</span>
+            <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
+            <button type="button" data-zoom="reset" aria-label="Reset zoom">Reset</button>
+            <button type="button" data-zoom="close" aria-label="Close image viewer">&#10005;</button>
+        </div>
+        <div class="zoom-stage" tabindex="0">
+            <img id="zoom-img" alt="">
+        </div>
+    </dialog>
+ 
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">&uarr;</button>
 </body>
 </html>
+ 

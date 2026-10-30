@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Green Nursery</title>
     <meta name="description" content="Green Nursery personal customer service">
+    <meta property="og:title" content="Services | Green Nursery">
+    <meta property="og:description" content="Personal customer care and tailored gardening advice.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
     <link rel="stylesheet" href="../css/style.css">
-    <title>GREEN NURSERY | SERVICES</title>
+    <script src="../JS/script.js" defer></script>
+    <script src="../JS/Cart.js" defer></script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+ 
     <header class="site-header">
-        <a href="../index.html" class="site-logo" aria-label="Green Nursery Home">🌿 GREEN NURSERY</a>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+        <a href="../index.html" class="site-logo" aria-label="Green Nursery Home"><span aria-hidden="true">🌿</span> GREEN NURSERY</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
         <label for="menu-toggle" class="hamburger" aria-hidden="true">
             <span></span><span></span><span></span>
         </label>
@@ -18,32 +26,37 @@
             <a class="nav-link" href="../index.html">HOME</a>
             <a class="nav-link" href="./about.html">ABOUT US</a>
             <a class="nav-link" href="./products.html">PRODUCTS</a>
-            <a class="nav-link active" href="./services.html">SERVICES</a>
+            <a class="nav-link active" href="./services.html" aria-current="page">SERVICES</a>
             <a class="nav-link" href="./contact.html">CONTACT US</a>
             <a class="nav-link" href="./inquiry.html">INQUIRY</a>
         </nav>
-    </header>
 
-    <main>
+        
+    </header>
+ 
+    <main id="main">
         <div class="service-card">
-            <img class="section-img" src="../assets/1000_F_2084336278_OFTDvgSeDFpmOfHoafhy8VuSzmNPaWkU.jpg" alt="Green Nursery customer support team assisting customers">
-            
+            <img class="section-img" src="../assets/Tree%20Life%20.jpg" alt="Green Nursery customer support team assisting customers" width="800" height="600">
+ 
             <h1>Personal Service</h1>
-            
+ 
             <p class="description">
-                We are fully dedicated to serving you to the best of our abilities. 
+                We are fully dedicated to serving you to the best of our abilities.
                 Our Customer Care team is here to assist you with any request or tailored gardening advice.
             </p>
-            
+ 
             <ul class="contact-list">
-                 <li class="contact-item">✉️ hello@greennursery.co.za</li>
-                 <li class="contact-item">📞 011 463 4771</li>
+                <li class="contact-item"><a href="mailto:hello@greennursery.co.za"><span aria-hidden="true">✉️</span> hello@greennursery.co.za</a></li>
+                <li class="contact-item"><a href="tel:+27714634771"><span aria-hidden="true">📞</span> 071 463 4771</a></li>
             </ul>
         </div>
     </main>
-
+ 
     <footer>
         <p>&copy; 2026 Green Nursery. Cultivating joy, one leaf at a time.</p>
     </footer>
+ 
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">&uarr;</button>
 </body>
 </html>
+ 

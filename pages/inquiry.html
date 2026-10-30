@@ -3,14 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiry | Green Nursery</title>
     <meta name="description" content="Inquiry form for Green Nursery custom projects">
+    <meta property="og:title" content="Inquiry | Green Nursery">
+    <meta property="og:description" content="Tell us about your landscape project or bulk plant needs.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
     <link rel="stylesheet" href="../css/style.css">
-    <title>GREEN NURSERY | INQUIRY</title>
+    <script src="../JS/script.js" defer></script>
+    <script src="../JS/Inquiry.js" defer></script>
+    <script src="../JS/Cart.js" defer></script>
 </head>
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "jtONNmaC0avk2mFAw",
+      });
+   })();
+</script>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <header class="site-header">
-        <a href="../index.html" class="site-logo">🌿 GREEN NURSERY</a>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+        <a href="../index.html" class="site-logo" aria-label="Green Nursery Home"><span aria-hidden="true">🌿</span> GREEN NURSERY</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
         <label for="menu-toggle" class="hamburger" aria-hidden="true">
             <span></span><span></span><span></span>
         </label>
@@ -20,56 +38,68 @@
             <a class="nav-link" href="./products.html">PRODUCTS</a>
             <a class="nav-link" href="./services.html">SERVICES</a>
             <a class="nav-link" href="./contact.html">CONTACT US</a>
-            <a class="nav-link active" href="./inquiry.html">INQUIRY</a>
+            <a class="nav-link active" href="./inquiry.html" aria-current="page">INQUIRY</a>
         </nav>
+
+        
     </header>
 
-    <main>
+    <main id="main">
         <div class="form-card">
             <div class="form-sidebar">
                 <h1>Inquiry Form</h1>
                 <p class="lead-text">Have a landscape project or need bulk plant solutions? Fill in the details below and our managers will create a custom proposal for your budget.</p>
-                <img class="section-img" src="../assets/INQUIRY.jpg" alt="Botanical expert managing plants in nursery">
+                <img class="section-img" src="../assets/INQUIRY.jpg" alt="Botanical expert managing plants in nursery" width="800" height="600">
             </div>
 
-            <form action="#" method="POST">
+            <form id="inquiryForm" action="#" method="POST" novalidate>
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Tell us who you are" required autocomplete="name">
+                    <input type="text" id="name" name="name" placeholder="Tell us who you are" autocomplete="name">
+                    <small id="name-error" class="error-message"></small>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Where we can reply" required autocomplete="email">
+                    <input type="email" id="email" name="email" placeholder="Where we can reply" autocomplete="email">
+                    <small id="email-error" class="error-message"></small>
                 </div>
 
                 <div class="form-group">
                     <label for="proj_type">Project Type</label>
-                    <select id="proj_type" name="proj_type" required>
+                    <select id="proj_type" name="proj_type">
                         <option value="" disabled selected>-- Select an option --</option>
                         <option value="gardening-tools">Gardening Tools</option>
                         <option value="plant-care">Plant Care Services</option>
                         <option value="pottery-care">Pottery Care</option>
                     </select>
+                    <small id="proj_type-error" class="error-message"></small>
                 </div>
 
                 <div class="form-group">
                     <label for="budget">Estimated Budget (ZAR)</label>
-                    <input type="number" id="budget" name="budget" min="0" placeholder="Helps us suggest the right solution" required>
+                    <input type="number" id="budget" name="budget" min="1" inputmode="numeric" placeholder="Helps us suggest the right solution">
+                    <small id="budget-error" class="error-message"></small>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Detailed Message</label>
-                    <textarea id="message" name="message" placeholder="Describe your workspace, plant preferences, or key questions..." required></textarea>
+                    <textarea id="message" name="message" placeholder="Describe your workspace, plant preferences, or key questions..."></textarea>
+                    <small id="message-error" class="error-message"></small>
                 </div>
 
-                <button class="btn-submit" type="submit">Submit Inquiry ✨</button>
-            </form> 
+                <!-- Global Notification Banner -->
+                <div id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1"></div>
+
+                <button class="btn-submit" type="submit">Submit Inquiry <span aria-hidden="true">✨</span></button>
+            </form>
         </div>
     </main>
 
     <footer>
         <p>&copy; 2026 Green Nursery. Cultivating joy, one leaf at a time.</p>
     </footer>
+    
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">&uarr;</button>
 </body>
 </html>

@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Green Nursery</title>
     <meta name="description" content="Contact Green Nursery - address, hours and message form">
+    <meta property="og:title" content="Contact Us | Green Nursery">
+    <meta property="og:description" content="Find our address, opening hours and send us a message.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
     <link rel="stylesheet" href="../css/style.css">
-    <title>GREEN NURSERY | CONTACT</title>
+
+    <!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "jtONNmaC0avk2mFAw",
+      });
+   })();
+</script>
+    <script src="../JS/Cart.js" defer></script>
+    <script src="../JS/script.js" defer></script>
+    <script src="../JS/contact.js" defer></script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <header class="site-header">
-        <a href="../index.html" class="site-logo">🌿 GREEN NURSERY</a>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+        <a href="../index.html" class="site-logo" aria-label="Green Nursery Home"><span aria-hidden="true">🌿</span> GREEN NURSERY</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
         <label for="menu-toggle" class="hamburger" aria-hidden="true">
             <span></span><span></span><span></span>
         </label>
@@ -19,57 +38,67 @@
             <a class="nav-link" href="./about.html">ABOUT US</a>
             <a class="nav-link" href="./products.html">PRODUCTS</a>
             <a class="nav-link" href="./services.html">SERVICES</a>
-            <a class="nav-link active" href="./contact.html">CONTACT US</a>
+            <a class="nav-link active" href="./contact.html" aria-current="page">CONTACT US</a>
             <a class="nav-link" href="./inquiry.html">INQUIRY</a>
         </nav>
+
+        
     </header>
 
-    <main>
-        <section id="welcome">
-            <img class="section-img" src="../assets/MSG.png" alt="Plant community icon" style="max-width:180px;">
+    <main id="main">
+        <section id="welcome" class="stack">
+            <img class="icon-img" src="../assets/MSG.png" alt="" width="120" height="120">
             <h1>Contact Us</h1>
             <p class="section-text-large">
                 We at Green Nursery prioritize the wellness of plant life and building a community bound together through plants and shared care for nature.
             </p>
         </section>
 
-        <section id="details">
-            <h1>Get In Touch</h1>
+        <section id="details" class="stack">
+            <h2>Get In Touch</h2>
             <ul class="info-list">
-                <li class="info-item">✉️ <strong>Email:</strong> hello@greennursery.co.za</li>
-                <li class="info-item">📞 <strong>Phone:</strong> 011 463 4771</li>
-                <li class="info-item">⏰ <strong>Hours:</strong> Tuesday to Saturday, 9:00 - 15:00 SAST</li>
+                <li class="info-item"><span aria-hidden="true">✉️</span> <strong>Email:</strong> <a href="mailto:hello@greennursery.co.za">hello@greennursery.co.za</a></li>
+                <li class="info-item"><span aria-hidden="true">📞</span> <strong>Phone:</strong> <a href="tel:+27714634771">071 463 4771</a></li>
+                <li class="info-item"><span aria-hidden="true">⏰</span> <strong>Hours:</strong> Tuesday to Saturday, 9:00 - 15:00 SAST</li>
             </ul>
         </section>
 
-        <section id="location">
-            <h1>Our Base</h1>
+        <section id="location" class="stack">
+            <h2>Our Base</h2>
             <ul class="info-list">
-                <li class="info-item">📍 62 Newlands Rd, Newlands, Johannesburg, 2092</li>
+                <li class="info-item"><span aria-hidden="true">📍</span> 62 Newlands Rd, Newlands, Johannesburg, 2092</li>
             </ul>
             <div class="map-wrapper">
-                <iframe title="Green Nursery Location Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916720.7897499097!2d28.04001525997889!3d-26.166064411741083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950bf4cb455a13%3A0xada20f6deb710ae4!2sGreen%20Fingers!5e0!3m2!1sen!2sza!4v1786690288357!5m2!1sen!2sza" 
-                allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
-                </iframe>
+                <iframe title="Map showing the Green Nursery location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916720.7897499097!2d28.04001525997889!3d-26.166064411741083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950bf4cb455a13%3A0xada20f6deb710ae4!2sGreen%20Fingers!5e0!3m2!1sen!2sza!4v1786690288357!5m2!1sen!2sza"
+                allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
         </section>
 
-        <section id="message-form">
-            <h1>Send a Message</h1>
+        <section id="message-form" class="stack">
+            <h2>Send a Message</h2>
             <p class="section-text-large">Have a question? Drop us a line below.</p>
-            <form class="contact-form" action="#" method="POST">
+            <form id="contactForm" class="contact-form" action="#" method="POST" novalidate>
                 <div class="form-group">
                     <label for="contact-name">Your Name</label>
-                    <input type="text" id="contact-name" name="name" placeholder="Your name" required autocomplete="name">
+                    <input type="text" id="contact-name" name="name" placeholder="Your name" autocomplete="name">
+                    <small id="contact-name-error" class="error-message"></small>
                 </div>
+                
                 <div class="form-group">
                     <label for="contact-email">Email Address</label>
-                    <input type="email" id="contact-email" name="email" placeholder="you@example.com" required autocomplete="email">
+                    <input type="email" id="contact-email" name="email" placeholder="you@example.com" autocomplete="email">
+                    <small id="contact-email-error" class="error-message"></small>
                 </div>
+
                 <div class="form-group">
                     <label for="contact-message">Your Message</label>
-                    <textarea id="contact-message" name="message" placeholder="Type your message here..." rows="5" required></textarea>
+                    <textarea id="contact-message" name="message" placeholder="Type your message here..." rows="5"></textarea>
+                    <small id="contact-message-error" class="error-message"></small>
                 </div>
+
+                <!-- Global Notification Banner -->
+                <div id="contact-form-status" class="form-status" role="status" aria-live="polite" tabindex="-1"></div>
+
                 <button type="submit">Send Message</button>
             </form>
         </section>
@@ -78,5 +107,7 @@
     <footer>
         <p>&copy; 2026 Green Nursery. Cultivating joy, one leaf at a time.</p>
     </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">&uarr;</button>
 </body>
 </html>
