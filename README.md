@@ -244,27 +244,27 @@ Part 1 and 2 imporvements !!!
 A. **Externalized CSS Structure:**
 Removed all internal blocks and linked a unified stylesheet across all pages:
 ```html
-<link rel="stylesheet" href="./css/style.css"> <!-- Root pages -->
-<link rel="stylesheet" href="../css/style.css"> <!-- Subpages -->
+link rel="stylesheet" href="./css/style.css">  (Root pages) 
+link rel="stylesheet" href="../css/style.css">  (Subpages)
 B. Responsive Header & Navigation (Checkbox Hack):
 Implemented a robust, accessible mobile menu toggle using pure CSS:
 
-HTML
-<header class="site-header">
-  <a href="./index.html" class="site-logo">🌿 GREEN NURSERY</a>
-  <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
-  <label for="menu-toggle" class="hamburger" aria-hidden="true">
+HTML:
+header class="site-header"
+  a href="./index.html" class="site-logo">🌿 GREEN NURSERY</a>
+  input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
+  label for="menu-toggle" class="hamburger" aria-hidden="true">
       <span></span><span></span><span></span>
-  </label>
-  <nav aria-label="Main navigation">
-    <a class="nav-link active" href="./index.html" aria-current="page">HOME</a>
-    <a class="nav-link" href="./pages/about.html">ABOUT US</a>
-    <a class="nav-link" href="./pages/products.html">PRODUCTS</a>
-    <a class="nav-link" href="./pages/services.html">SERVICES</a>
-    <a class="nav-link" href="./pages/contact.html">CONTACT US</a>
-    <a class="nav-link" href="./pages/inquiry.html">INQUIRY</a>
-  </nav>
-</header>
+  /label
+  nav aria-label="Main navigation"
+    a class="nav-link active" href="./index.html" aria-current="page">HOME</a
+    a class="nav-link" href="./pages/about.html">ABOUT US</a
+    a class="nav-link" href="./pages/products.html">PRODUCT</a
+    a class="nav-link" href="./pages/services.html">SERVICES</a
+    a class="nav-link" href="./pages/contact.html">CONTACT US</a>
+    a class="nav-link" href="./pages/inquiry.html">INQUIRY</a>
+  /nav
+/header
 C. Accessibility & Semantic Enhancements:
 
 Added aria-label attributes to navigation landmarks.
@@ -276,9 +276,9 @@ Added proper autocomplete="name", autocomplete="email", and input labels across 
 D. SEO Metadata Standardization:
 Added responsive viewport tags and rich descriptive meta tags to every page head:
 
-HTML
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Green Nursery - Bring your space to life with our plants and gardening services">
+HTML:
+meta name="viewport" content="width=device-width, initial-scale=1.0"
+meta name="description" content="Green Nursery - Bring your space to life with our plants and gardening services"
 ==========================================================================================================================================
 
 PART 2: ADDITION OF CSS - Styling Architecture
