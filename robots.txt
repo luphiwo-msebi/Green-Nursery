@@ -1,0 +1,6 @@
+# Instruct search engine crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.greennursery.co.za/sitemap.xml
