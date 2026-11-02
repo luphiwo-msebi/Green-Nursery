@@ -326,7 +326,9 @@ General changes made to netrw:
 		Oct 23, 2015	* if g:netrw_usetab and <c-tab> now used
 				  to control whether NetrwShrink is used
 				  (see |netrw-c-tab|)
+	{% raw %}			  
 	v153:	May 13, 2014	* added another |g:netrw_ffkeep| usage {{{2
+	{% endraw %}
 		May 14, 2014	* changed s:PerformListing() so that it
 				  always sets ft=netrw for netrw buffers
 				  (ie. even when syntax highlighting is
